@@ -15,6 +15,7 @@ class ContactLeads(MetaData):
     name = models.CharField(max_length=100)
     email = models.EmailField()
     subject = models.CharField(max_length=200)
+    phone_no = models.CharField(max_length=15, null=True, blank=True)
     message = models.TextField()
     status = models.CharField(max_length=20, default='new', choices=[('new', 'New'), ('in_progress', 'In Progress'), ('resolved', 'Resolved')])
 

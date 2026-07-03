@@ -130,16 +130,16 @@
   @color declaration
   */
   --it-common-white: #ffffff;
-  --it-common-black: #1F2432;
-  --it-common-black-2: #313537;
+  --it-common-black: #0A0A0A ;
+  --it-common-black-2: #36454F;
   --it-common-brown: #272422;
   --it-heading-primary: #0C121D;
   --it-gray-1: #F0F4F5;
   --it-gray-2: #D9D9D9;
   --it-gray-3: #F5F7F9;
   --it-gray-4: #FFF8F4;
-  --it-text-body: #6C757D;
-  --it-theme-1: #03594E;
+  --it-text-body: #1A1110;
+  --it-theme-1: #9B111E;
   --it-theme-2: #F8C62F;
   --it-theme-3: #1AB69D;
   --it-theme-4: #618269;
@@ -7610,7 +7610,7 @@ td.product-thumbnail img {
 }
 
 .buttons-cart input, .coupon input[type=submit], .buttons-cart a, .coupon-info p.form-row input[type=submit] {
-  background: #252525 none repeat scroll 0 0;
+  background: #0A0A0A  none repeat scroll 0 0;
   border: medium none;
   color: #fff;
   display: inline-block;
@@ -18508,7 +18508,7 @@ input[type=radio] {
   border-radius: 20px;
   transition: 0.3s;
   z-index: 1;
-  background: linear-gradient(180deg, rgba(240, 244, 245, 0) 0%, #1F2432 100%);
+  background: linear-gradient(180deg, rgba(240, 244, 245, 0) 0%, #0A0A0A  100%);
 }
 .it-team-2-item::after {
   position: absolute;
@@ -20366,7 +20366,7 @@ input[type=radio] {
   width: 70px;
   padding: 7px 0;
   text-align: center;
-  border: 1px solid #6C757D;
+  border: 1px solid #1A1110;
 }
 @media (max-width: 767px) {
   .it-event-countdown-time > div > div {

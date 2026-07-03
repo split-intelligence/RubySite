@@ -1,9 +1,29 @@
 from django.shortcuts import render
+from django.contrib import messages
+
+from lms.models import Course, Category
+from users.models import InstructorProfile as Instructor
+
+from .models import ContactLeads, Testimonials
+
 
 # Create your views here.
 
 def index(request):
-    return render(request, 'index.html')
+    categories = Category.objects.all()[:6]  # Limit to 6 categories
+    courses = Course.objects.all()
+    testimonials = Testimonials.objects.all()[:4]
+    instructors = Instructor.objects.all()[:6]
+    
+    
+    context = {
+        'categories': categories,
+        'courses': courses,
+        'testimonials': testimonials,
+        'instructors': instructors,
+    }
+    
+    return render(request, 'index.html', context)
 
 def about(request):
     return render(request, 'about-us-v1.html')
@@ -15,8 +35,19 @@ def contact(request):
         email = request.POST.get('email')
         subject = request.POST.get('subject')
         message = request.POST.get('message')
+        phone_no = request.POST.get('phone')
 
-        # You can save the data to the database or send an email here
+        # Create a new ContactLeads instance
+        contact_lead = ContactLeads(
+            name=name,
+            email=email,
+            subject=subject,
+            message=message,
+            phone_no=phone_no
+        )
+        contact_lead.save()
+        messages.success(request, 'Your message has been sent successfully!')
+        return render(request, 'contact-us.html')
     return render(request, 'contact-us.html')
 
 

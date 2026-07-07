@@ -1,0 +1,310 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Academic Programs{% endblock %}
+{% block context %}
+   <main>
+
+   <!-- breadcrumb-area-start -->
+   <div class="it-breadcrumb-area fix z-index-1" data-background="{% static 'assets/img/shape/breadcrumb-1-bg.png' %}">
+      <img class="it-breadcrumb-shape-1" src="{% static 'assets/img/shape/breadcrumb-1-1.png' %}" alt="">
+      <div class="container">
+         <div class="row align-items-center">
+            <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8">
+               <div class="it-breadcrumb-content z-index-1">
+                  <div class="it-breadcrumb-title-box">
+                     <h3 class="it-breadcrumb-title">Academic Programs</h3>
+                  </div>
+                  <div class="it-breadcrumb-list-wrap">
+                     <div class="it-breadcrumb-list">
+                        <a href="index.html">Home</a>
+                        <span class="dvdr"><i class="fa-regular fa-chevron-right"></i></span>
+                        <span>Academic Programs</span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- breadcrumb-area-end -->
+
+   <!-- programs-intro-area-start -->
+   <section class="it-about-area z-index-1 pt-130 pb-60">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-8 offset-lg-2 text-center">
+               <div class="it-about-section-title-box mb-25">
+                  <span class="it-section-subtitle yellow-style">Schools &amp; Departments</span>
+                  <h4 class="it-section-title">Explore Our Academic Programs</h4>
+               </div>
+               <p class="mb-0">RUBYTECH LEARNING LTD delivers comprehensive training across nine schools spanning artificial intelligence, software engineering, data, cybersecurity, cloud infrastructure, creative technology, digital business, emerging technologies, and a dedicated academy for young learners. Select a school below to view its programmes.</p>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- programs-intro-area-end -->
+
+   <!-- programs-accordion-area-start -->
+   <section class="it-faq-area z-index-1 pb-130">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+               <div class="accordion it-custom-accordion" id="schoolsAccordion">
+            <div class="accordion-items mb-20">
+               <h2 class="accordion-header" id="heading1">
+                  <button class="accordion-buttons" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                     <span><i class="fa-solid fa-brain"></i></span> School of Artificial Intelligence
+                  </button>
+               </h2>
+               <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1" data-bs-parent="#schoolsAccordion">
+                  <div class="accordion-body">
+                     <div class="row">
+                        <div class="col-md-6">
+                           <ul class="it-programs-list">
+                              <li class="mb-10">AI & Machine Learning</li>
+                              <li class="mb-10">AI Automation</li>
+                              <li class="mb-10">Prompt Engineering</li>
+                           </ul>
+                        </div>
+                        <div class="col-md-6">
+                           <ul class="it-programs-list">
+                              <li class="mb-10">Generative AI</li>
+                              <li class="mb-10">AI Agents</li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="accordion-items mb-20">
+               <h2 class="accordion-header" id="heading2">
+                  <button class="accordion-buttons collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                     <span><i class="fa-solid fa-code"></i></span> School of Software Engineering
+                  </button>
+               </h2>
+               <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#schoolsAccordion">
+                  <div class="accordion-body">
+                     <div class="row">
+                        <div class="col-md-6">
+                           <ul class="it-programs-list">
+                              <li class="mb-10">Software Development</li>
+                              <li class="mb-10">Web Development</li>
+                              <li class="mb-10">Mobile App Development</li>
+                           </ul>
+                        </div>
+                        <div class="col-md-6">
+                           <ul class="it-programs-list">
+                              <li class="mb-10">APIs & Backend Development</li>
+                              <li class="mb-10">Low-Code & No-Code Development</li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="accordion-items mb-20">
+               <h2 class="accordion-header" id="heading3">
+                  <button class="accordion-buttons collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                     <span><i class="fa-solid fa-chart-line"></i></span> School of Data & Analytics
+                  </button>
+               </h2>
+               <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#schoolsAccordion">
+                  <div class="accordion-body">
+                     <div class="row">
+                        <div class="col-md-6">
+                           <ul class="it-programs-list">
+                              <li class="mb-10">Data Science</li>
+                              <li class="mb-10">Data Analytics</li>
+                           </ul>
+                        </div>
+                        <div class="col-md-6">
+                           <ul class="it-programs-list">
+                              <li class="mb-10">Business Intelligence</li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="accordion-items mb-20">
+               <h2 class="accordion-header" id="heading4">
+                  <button class="accordion-buttons collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                     <span><i class="fa-solid fa-shield-halved"></i></span> School of Cybersecurity & Digital Forensics
+                  </button>
+               </h2>
+               <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4" data-bs-parent="#schoolsAccordion">
+                  <div class="accordion-body">
+                     <div class="row">
+                        <div class="col-md-6">
+                           <ul class="it-programs-list">
+                              <li class="mb-10">Cybersecurity</li>
+                              <li class="mb-10">Ethical Hacking</li>
+                           </ul>
+                        </div>
+                        <div class="col-md-6">
+                           <ul class="it-programs-list">
+                              <li class="mb-10">Digital Forensics</li>
+                              <li class="mb-10">Information Security</li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="accordion-items mb-20">
+               <h2 class="accordion-header" id="heading5">
+                  <button class="accordion-buttons collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                     <span><i class="fa-solid fa-cloud"></i></span> School of Cloud & Infrastructure
+                  </button>
+               </h2>
+               <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5" data-bs-parent="#schoolsAccordion">
+                  <div class="accordion-body">
+                     <div class="row">
+                        <div class="col-md-6">
+                           <ul class="it-programs-list">
+                              <li class="mb-10">Cloud Computing</li>
+                              <li class="mb-10">Network Administration</li>
+                           </ul>
+                        </div>
+                        <div class="col-md-6">
+                           <ul class="it-programs-list">
+                              <li class="mb-10">DevOps Fundamentals</li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="accordion-items mb-20">
+               <h2 class="accordion-header" id="heading6">
+                  <button class="accordion-buttons collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                     <span><i class="fa-solid fa-palette"></i></span> School of Creative Technology
+                  </button>
+               </h2>
+               <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="heading6" data-bs-parent="#schoolsAccordion">
+                  <div class="accordion-body">
+                     <div class="row">
+                        <div class="col-md-6">
+                           <ul class="it-programs-list">
+                              <li class="mb-10">Graphic Design</li>
+                              <li class="mb-10">Animation</li>
+                              <li class="mb-10">Motion Graphics</li>
+                           </ul>
+                        </div>
+                        <div class="col-md-6">
+                           <ul class="it-programs-list">
+                              <li class="mb-10">UI/UX Design</li>
+                              <li class="mb-10">Product Design</li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="accordion-items mb-20">
+               <h2 class="accordion-header" id="heading7">
+                  <button class="accordion-buttons collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                     <span><i class="fa-solid fa-briefcase"></i></span> School of Digital Business & Productivity
+                  </button>
+               </h2>
+               <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="heading7" data-bs-parent="#schoolsAccordion">
+                  <div class="accordion-body">
+                     <div class="row">
+                        <div class="col-md-6">
+                           <ul class="it-programs-list">
+                              <li class="mb-10">Digital Marketing</li>
+                              <li class="mb-10">Virtual Assistant</li>
+                              <li class="mb-10">Project Management</li>
+                           </ul>
+                        </div>
+                        <div class="col-md-6">
+                           <ul class="it-programs-list">
+                              <li class="mb-10">Management Information Systems</li>
+                              <li class="mb-10">Office Automation (Microsoft Office Suite)</li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="accordion-items mb-20">
+               <h2 class="accordion-header" id="heading8">
+                  <button class="accordion-buttons collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
+                     <span><i class="fa-solid fa-robot"></i></span> School of Emerging Technologies
+                  </button>
+               </h2>
+               <div id="collapse8" class="accordion-collapse collapse" aria-labelledby="heading8" data-bs-parent="#schoolsAccordion">
+                  <div class="accordion-body">
+                     <div class="row">
+                        <div class="col-md-6">
+                           <ul class="it-programs-list">
+                              <li class="mb-10">Robotics</li>
+                           </ul>
+                        </div>
+                        <div class="col-md-6">
+                           <ul class="it-programs-list">
+                              <li class="mb-10">Internet of Things (IoT)</li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="accordion-items mb-20">
+               <h2 class="accordion-header" id="heading9">
+                  <button class="accordion-buttons collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9" aria-expanded="false" aria-controls="collapse9">
+                     <span><i class="fa-solid fa-child"></i></span> RUBYTECH Kids Academy
+                  </button>
+               </h2>
+               <div id="collapse9" class="accordion-collapse collapse" aria-labelledby="heading9" data-bs-parent="#schoolsAccordion">
+                  <div class="accordion-body">
+                     <div class="row">
+                        <div class="col-md-6">
+                           <ul class="it-programs-list">
+                              <li class="mb-10">AI for Kids</li>
+                              <li class="mb-10">Coding for Kids</li>
+                              <li class="mb-10">Robotics for Kids</li>
+                           </ul>
+                        </div>
+                        <div class="col-md-6">
+                           <ul class="it-programs-list">
+                              <li class="mb-10">Scratch Programming</li>
+                              <li class="mb-10">Python for Kids</li>
+                              <li class="mb-10">Digital Creativity</li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- programs-accordion-area-end -->
+
+   <!-- cta-area-start -->
+   <section class="it-cta-4-area z-index-2">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12 text-center">
+               <div class="it-cta-4-content">
+                  <h4 class="it-section-title text-white">Ready To Start Learning? <br> Let's Begin Your Journey</h4>
+                  <p>Enhance your knowledge and grow professionally by learning new skills anytime, anywhere. Access expert-led courses designed to help you succeed.</p>
+                  <a href="sign-in.html" class="it-btn-yellow white-bg">
+                     <span>
+                        <span class="text-1">Start Learning Now</span>
+                        <span class="text-2">Start Learning Now</span>
+                     </span>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- cta-area-end -->
+
+   </main>
+{% endblock context %}

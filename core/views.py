@@ -31,6 +31,10 @@ def index(request):
 def about(request):
     return render(request, 'about-us-v1.html')
 
+
+def programs(request):
+    return render(request, 'programs.html')
+
 def contact(request):
     if request.method == 'POST':
         # Handle form submission here

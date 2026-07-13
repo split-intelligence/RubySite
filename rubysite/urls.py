@@ -24,6 +24,7 @@ urlpatterns = [
     path('ruby-admin/', admin.site.urls),
     path('', include('core.urls')),
     path('lms/', include('lms.urls')),
+    path('accounts/', include('users.urls')),
     
 ]
 

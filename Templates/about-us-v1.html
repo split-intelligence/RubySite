@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}About Us{% endblock %}
-{% block context %}
+{% block content %}
    <main>
 
    <!-- breadcrumb-area-start -->
@@ -50,12 +50,12 @@
    <section class="it-about-area z-index-1 pt-130 pb-80">
       <div class="container">
          <div class="row align-items-center">
-            <div class="col-lg-4">
+            <!--<div class="col-lg-4">
                <div class="it-about-thumb z-index-1 border-radius-20 mb-40">
-                  <img src="{% static 'assets/img/team/founder.jpg' %}" alt="Bilkis Shehu, Founder & Chief Executive Officer" style="width:100%; border-radius:20px;">
+                  <img src="{% static 'assets/img/team/team-11-1.jpg' %}" alt="Bilkis Shehu, Founder & Chief Executive Officer" style="width:100%; border-radius:20px;">
                </div>
-            </div>
-            <div class="col-lg-8">
+            </div>-->
+            <div class="col-lg-10"> <!--8-->
                <div class="it-about-section-title-box mb-25">
                   <span class="it-section-subtitle yellow-style">A Message From Our Founder</span>
                   <h4 class="it-section-title">Welcome to RUBYTECH LEARNING LTD</h4>
@@ -101,13 +101,13 @@
                <div class="it-about-list-box" style="background-color: var(--it-gray-1); border-radius: 20px; padding: 30px;">
                   <h5 class="mb-20" style="font-family: var(--it-ff-heading);">Disciplines We Train In</h5>
                   <ul>
-                     <li class="mb-15"><span><svg width="20" height="16" viewBox="0 0 30 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.56793 23.8839C8.37951 23.8839 8.22245 23.7608 8.15964 23.6069C8.12828 23.5453 5.42699 16.7109 1.24953 14.1249C0.432876 13.6324 -0.195186 13.109 0.056039 11.9391C0.307264 10.8 1.09256 10.1535 2.50593 9.84567C5.01862 9.32229 7.71982 13.1397 8.72499 14.7098C12.2428 9.69181 19.2785 1.81065 29.5179 0.887097C30.0119 0.830341 30.1945 1.548 29.7378 1.74909C29.5807 1.81065 14.9439 8.36808 9.00757 23.6377C8.91341 23.7915 8.75635 23.8839 8.56793 23.8839Z" fill="#F8C62F"/></svg> Artificial Intelligence &amp; Machine Learning</span></li>
-                     <li class="mb-15"><span><svg width="20" height="16" viewBox="0 0 30 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.56793 23.8839C8.37951 23.8839 8.22245 23.7608 8.15964 23.6069C8.12828 23.5453 5.42699 16.7109 1.24953 14.1249C0.432876 13.6324 -0.195186 13.109 0.056039 11.9391C0.307264 10.8 1.09256 10.1535 2.50593 9.84567C5.01862 9.32229 7.71982 13.1397 8.72499 14.7098C12.2428 9.69181 19.2785 1.81065 29.5179 0.887097C30.0119 0.830341 30.1945 1.548 29.7378 1.74909C29.5807 1.81065 14.9439 8.36808 9.00757 23.6377C8.91341 23.7915 8.75635 23.8839 8.56793 23.8839Z" fill="#F8C62F"/></svg> Software &amp; Web Development</span></li>
-                     <li class="mb-15"><span><svg width="20" height="16" viewBox="0 0 30 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.56793 23.8839C8.37951 23.8839 8.22245 23.7608 8.15964 23.6069C8.12828 23.5453 5.42699 16.7109 1.24953 14.1249C0.432876 13.6324 -0.195186 13.109 0.056039 11.9391C0.307264 10.8 1.09256 10.1535 2.50593 9.84567C5.01862 9.32229 7.71982 13.1397 8.72499 14.7098C12.2428 9.69181 19.2785 1.81065 29.5179 0.887097C30.0119 0.830341 30.1945 1.548 29.7378 1.74909C29.5807 1.81065 14.9439 8.36808 9.00757 23.6377C8.91341 23.7915 8.75635 23.8839 8.56793 23.8839Z" fill="#F8C62F"/></svg> Data Science &amp; Analytics</span></li>
-                     <li class="mb-15"><span><svg width="20" height="16" viewBox="0 0 30 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.56793 23.8839C8.37951 23.8839 8.22245 23.7608 8.15964 23.6069C8.12828 23.5453 5.42699 16.7109 1.24953 14.1249C0.432876 13.6324 -0.195186 13.109 0.056039 11.9391C0.307264 10.8 1.09256 10.1535 2.50593 9.84567C5.01862 9.32229 7.71982 13.1397 8.72499 14.7098C12.2428 9.69181 19.2785 1.81065 29.5179 0.887097C30.0119 0.830341 30.1945 1.548 29.7378 1.74909C29.5807 1.81065 14.9439 8.36808 9.00757 23.6377C8.91341 23.7915 8.75635 23.8839 8.56793 23.8839Z" fill="#F8C62F"/></svg> Cybersecurity &amp; Digital Forensics</span></li>
-                     <li class="mb-15"><span><svg width="20" height="16" viewBox="0 0 30 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.56793 23.8839C8.37951 23.8839 8.22245 23.7608 8.15964 23.6069C8.12828 23.5453 5.42699 16.7109 1.24953 14.1249C0.432876 13.6324 -0.195186 13.109 0.056039 11.9391C0.307264 10.8 1.09256 10.1535 2.50593 9.84567C5.01862 9.32229 7.71982 13.1397 8.72499 14.7098C12.2428 9.69181 19.2785 1.81065 29.5179 0.887097C30.0119 0.830341 30.1945 1.548 29.7378 1.74909C29.5807 1.81065 14.9439 8.36808 9.00757 23.6377C8.91341 23.7915 8.75635 23.8839 8.56793 23.8839Z" fill="#F8C62F"/></svg> Cloud Computing &amp; DevOps</span></li>
-                     <li class="mb-15"><span><svg width="20" height="16" viewBox="0 0 30 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.56793 23.8839C8.37951 23.8839 8.22245 23.7608 8.15964 23.6069C8.12828 23.5453 5.42699 16.7109 1.24953 14.1249C0.432876 13.6324 -0.195186 13.109 0.056039 11.9391C0.307264 10.8 1.09256 10.1535 2.50593 9.84567C5.01862 9.32229 7.71982 13.1397 8.72499 14.7098C12.2428 9.69181 19.2785 1.81065 29.5179 0.887097C30.0119 0.830341 30.1945 1.548 29.7378 1.74909C29.5807 1.81065 14.9439 8.36808 9.00757 23.6377C8.91341 23.7915 8.75635 23.8839 8.56793 23.8839Z" fill="#F8C62F"/></svg> Robotics &amp; Internet of Things</span></li>
-                     <li><span><svg width="20" height="16" viewBox="0 0 30 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.56793 23.8839C8.37951 23.8839 8.22245 23.7608 8.15964 23.6069C8.12828 23.5453 5.42699 16.7109 1.24953 14.1249C0.432876 13.6324 -0.195186 13.109 0.056039 11.9391C0.307264 10.8 1.09256 10.1535 2.50593 9.84567C5.01862 9.32229 7.71982 13.1397 8.72499 14.7098C12.2428 9.69181 19.2785 1.81065 29.5179 0.887097C30.0119 0.830341 30.1945 1.548 29.7378 1.74909C29.5807 1.81065 14.9439 8.36808 9.00757 23.6377C8.91341 23.7915 8.75635 23.8839 8.56793 23.8839Z" fill="#F8C62F"/></svg> Digital Marketing &amp; Product Design</span></li>
+                     <li class="mb-15"><span><svg width="20" height="16" viewBox="0 0 30 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.56793 23.8839C8.37951 23.8839 8.22245 23.7608 8.15964 23.6069C8.12828 23.5453 5.42699 16.7109 1.24953 14.1249C0.432876 13.6324 -0.195186 13.109 0.056039 11.9391C0.307264 10.8 1.09256 10.1535 2.50593 9.84567C5.01862 9.32229 7.71982 13.1397 8.72499 14.7098C12.2428 9.69181 19.2785 1.81065 29.5179 0.887097C30.0119 0.830341 30.1945 1.548 29.7378 1.74909C29.5807 1.81065 14.9439 8.36808 9.00757 23.6377C8.91341 23.7915 8.75635 23.8839 8.56793 23.8839Z" fill="#F8C62F"/></svg> School of Artificial Intelligence</span></li>
+                     <li class="mb-15"><span><svg width="20" height="16" viewBox="0 0 30 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.56793 23.8839C8.37951 23.8839 8.22245 23.7608 8.15964 23.6069C8.12828 23.5453 5.42699 16.7109 1.24953 14.1249C0.432876 13.6324 -0.195186 13.109 0.056039 11.9391C0.307264 10.8 1.09256 10.1535 2.50593 9.84567C5.01862 9.32229 7.71982 13.1397 8.72499 14.7098C12.2428 9.69181 19.2785 1.81065 29.5179 0.887097C30.0119 0.830341 30.1945 1.548 29.7378 1.74909C29.5807 1.81065 14.9439 8.36808 9.00757 23.6377C8.91341 23.7915 8.75635 23.8839 8.56793 23.8839Z" fill="#F8C62F"/></svg> School of Software Engineering</span></li>
+                     <li class="mb-15"><span><svg width="20" height="16" viewBox="0 0 30 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.56793 23.8839C8.37951 23.8839 8.22245 23.7608 8.15964 23.6069C8.12828 23.5453 5.42699 16.7109 1.24953 14.1249C0.432876 13.6324 -0.195186 13.109 0.056039 11.9391C0.307264 10.8 1.09256 10.1535 2.50593 9.84567C5.01862 9.32229 7.71982 13.1397 8.72499 14.7098C12.2428 9.69181 19.2785 1.81065 29.5179 0.887097C30.0119 0.830341 30.1945 1.548 29.7378 1.74909C29.5807 1.81065 14.9439 8.36808 9.00757 23.6377C8.91341 23.7915 8.75635 23.8839 8.56793 23.8839Z" fill="#F8C62F"/></svg> School of Data &amp; Analytics</span></li>
+                     <li class="mb-15"><span><svg width="20" height="16" viewBox="0 0 30 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.56793 23.8839C8.37951 23.8839 8.22245 23.7608 8.15964 23.6069C8.12828 23.5453 5.42699 16.7109 1.24953 14.1249C0.432876 13.6324 -0.195186 13.109 0.056039 11.9391C0.307264 10.8 1.09256 10.1535 2.50593 9.84567C5.01862 9.32229 7.71982 13.1397 8.72499 14.7098C12.2428 9.69181 19.2785 1.81065 29.5179 0.887097C30.0119 0.830341 30.1945 1.548 29.7378 1.74909C29.5807 1.81065 14.9439 8.36808 9.00757 23.6377C8.91341 23.7915 8.75635 23.8839 8.56793 23.8839Z" fill="#F8C62F"/></svg> School of Cybersecurity &amp; Digital Forensics</span></li>
+                     <li class="mb-15"><span><svg width="20" height="16" viewBox="0 0 30 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.56793 23.8839C8.37951 23.8839 8.22245 23.7608 8.15964 23.6069C8.12828 23.5453 5.42699 16.7109 1.24953 14.1249C0.432876 13.6324 -0.195186 13.109 0.056039 11.9391C0.307264 10.8 1.09256 10.1535 2.50593 9.84567C5.01862 9.32229 7.71982 13.1397 8.72499 14.7098C12.2428 9.69181 19.2785 1.81065 29.5179 0.887097C30.0119 0.830341 30.1945 1.548 29.7378 1.74909C29.5807 1.81065 14.9439 8.36808 9.00757 23.6377C8.91341 23.7915 8.75635 23.8839 8.56793 23.8839Z" fill="#F8C62F"/></svg> School of Cloud Computing &amp; Infrastructure</span></li>
+                     <li class="mb-15"><span><svg width="20" height="16" viewBox="0 0 30 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.56793 23.8839C8.37951 23.8839 8.22245 23.7608 8.15964 23.6069C8.12828 23.5453 5.42699 16.7109 1.24953 14.1249C0.432876 13.6324 -0.195186 13.109 0.056039 11.9391C0.307264 10.8 1.09256 10.1535 2.50593 9.84567C5.01862 9.32229 7.71982 13.1397 8.72499 14.7098C12.2428 9.69181 19.2785 1.81065 29.5179 0.887097C30.0119 0.830341 30.1945 1.548 29.7378 1.74909C29.5807 1.81065 14.9439 8.36808 9.00757 23.6377C8.91341 23.7915 8.75635 23.8839 8.56793 23.8839Z" fill="#F8C62F"/></svg> School of Digital Business &amp; Productivity</span></li>
+                     <li><span><svg width="20" height="16" viewBox="0 0 30 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.56793 23.8839C8.37951 23.8839 8.22245 23.7608 8.15964 23.6069C8.12828 23.5453 5.42699 16.7109 1.24953 14.1249C0.432876 13.6324 -0.195186 13.109 0.056039 11.9391C0.307264 10.8 1.09256 10.1535 2.50593 9.84567C5.01862 9.32229 7.71982 13.1397 8.72499 14.7098C12.2428 9.69181 19.2785 1.81065 29.5179 0.887097C30.0119 0.830341 30.1945 1.548 29.7378 1.74909C29.5807 1.81065 14.9439 8.36808 9.00757 23.6377C8.91341 23.7915 8.75635 23.8839 8.56793 23.8839Z" fill="#F8C62F"/></svg> School of Emerging Technologies</span></li>
                   </ul>
                </div>
             </div>
@@ -414,7 +414,7 @@
                            </svg>
                         </span>
                      </span>
-                      <br> Educeet’s Impact and Value</h4>
+                      <br> RubyTech Impact and Value</h4>
                </div>
             </div>
          </div>
@@ -1001,7 +1001,7 @@
                         </span>
                      </h4>
                      <p>Enhance your knowledge and grow professionally by learning new skills anytime, anywhere. Access expert-led courses designed to help you </p>
-                     <a href="sign-in.html" class="it-btn-yellow white-bg">
+                     <a href="{% url 'contact' %}" class="it-btn-yellow white-bg">
                         <span>
                            <span class="text-1">Start Learning Now</span>
                            <span class="text-2">Start Learning Now</span>
@@ -1017,4 +1017,4 @@
 
 
    </main>
-{% endblock context %}
+{% endblock content %}

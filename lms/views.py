@@ -12,25 +12,29 @@ from .models import Course, Category, EnrolledStudent, PaymentRecord
 
 # Create your views here.
 
+# ---------- Course Views ----------
 def courses(request):
     courses = Course.objects.all()
     return render(request, 'courses-v1.html', {'courses': courses})
 
 
-
+# --------- Course Detail View ----------
 def course_detail(request, course_id):
     course = Course.objects.get(id=course_id)
     return render(request, 'courses-details-v1.html', {'course': course})
 
 
+# --------- Enroll in Course View ----------
 def enroll_course(request, course_id):
     course = get_object_or_404(Course, id=course_id)
     if request.user.is_authenticated and request.user.is_student:
         EnrolledStudent.objects.get_or_create(student=request.user.student_profile, course=course)
         return redirect('course_detail', course_id=course.id)
     else:
-        return redirect('signin')
+        return redirect('login')
 
+
+# --------- Student Dashboard View ----------
 @login_required
 def student_dashboard(request):
     student = request.user.student_profile
@@ -43,6 +47,8 @@ def student_dashboard(request):
     return render(request, 'student-dashboard.html', {'enrolled_courses': enrolled_courses, 'payment_status': payment_status})
 
 
+
+# ---------- Paystack Payment Initiation ----------
 @login_required
 def initiate_payment(request, course_id):
     course = get_object_or_404(Course, id=course_id)
@@ -90,12 +96,11 @@ def initiate_payment(request, course_id):
                 return redirect(payment_url)
             else:
                 # Handle error
-                return render(request, 'courses/payment_error.html', {'error': response_data.get('message')})
+                return render(request, 'payment_error.html', {'error': response_data.get('message')})
         except Exception as e:
-            return render(request, 'courses/payment_error.html', {'error': str(e)})
-        
+            return render(request, 'payment_error.html', {'error': str(e)})   
     else:
-        return redirect('signin')
+        return redirect('login')
 
 
 # ---------- Paystack Callback (verification) ----------

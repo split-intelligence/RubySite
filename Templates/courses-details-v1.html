@@ -90,7 +90,7 @@
                 <div class="col-lg-6 col-md-6">
                   <div class="it-details-list style-1">
                     <ul>
-                      {% for item in course.outline.split| %}
+                      {% for item in course.outline.split %}
                         <li><span>{{ item }}</span></li>
                       {% empty %}
                         <li><span>Modern React with Hooks and Context API</span></li>
@@ -127,7 +127,7 @@
                 <h5 class="price">${{ course.price }} {% if course.old_price %}<del class="old-price">${{ course.old_price }}</del>{% endif %}{% if course.discount %} <span class="discount">{{ course.discount }} off</span>{% endif %}</h5>
                 <span class="time-left">{{ course.enrollment_deadline|default:'' }}</span>
               </div>
-              <a href="#" class="it-btn-yellow theme-bg mb-15 w-100">Enroll Now!!!</a>
+              <a href="{% url 'enroll_course' course.id %}" class="it-btn-yellow theme-bg mb-15 w-100">Enroll Now!!!</a>
               <a href="{% url 'courses' %}" class="it-btn-border style-3 w-100">View Courses</a>
               <p class="guarantee text-center mt-15 mb-30">30-Day Money Back Guarantee</p>
             </div>

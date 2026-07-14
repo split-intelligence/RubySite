@@ -54,6 +54,7 @@
                         <div class="it-signup-input mb-25">
                            <label>Password</label>
                            <input type="password" placeholder="Password">
+                           <input type="hidden" name="next" value="{{ next }}">
                         </div>
                      </div>
                      <div class="it-signup-forget d-flex justify-content-between flex-wrap">
@@ -77,7 +78,7 @@
                         </button>
                      </div>
                      <div class="it-signup-text text-center mb-30">
-                        <span>Don’t Have an Account?<a href="#"> Sign Up</a></span>
+                        <span>Don’t Have an Account?<a href="{% url 'signup' %}"> Sign Up</a></span>
                      </div>
                      <div class="it-signup-border text-center">
                         <span>or</span>

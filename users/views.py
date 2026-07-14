@@ -34,8 +34,8 @@ def signup(request):
                 InstructorProfile.objects.create(user=user)
 
             login(request, user)
-
-            return redirect("index")
+            next_url = request.POST.get('next') or request.GET.get('next') or 'index'
+            return redirect(next_url)
 
     else:
         form = UserRegisterForm()

@@ -30,7 +30,7 @@ class Course(MetaData):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='courses')
     price = models.DecimalField(max_digits=10, decimal_places=2)
     review = models.DecimalField(max_digits=3, decimal_places=2, default=0.0)
-    instructor = models.ForeignKey('users.InstructorProfile', on_delete=models.CASCADE, related_name='courses')
+    instructor = models.ForeignKey('users.InstructorProfile', on_delete=models.CASCADE, related_name='courses', null=True, blank=True)
     is_trending = models.BooleanField(default=False)
     is_featured = models.BooleanField(default=False)
     is_popular = models.BooleanField(default=False)

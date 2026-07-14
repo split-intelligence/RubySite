@@ -134,3 +134,11 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Paystack Configuration
+PAYSTACK_PUBLIC_KEY = 'pk_test_XXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+PAYSTACK_SECRET_KEY = 'sk_test_XXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+PAYSTACK_CALLBACK_URL = 'http://localhost:8000/lms/payment/callback/'
+
+

@@ -56,7 +56,7 @@ def signin(request):
 
             login(request, form.get_user())
 
-            return redirect("home")
+            return redirect("index")
 
     return render(request, "sign-in.html", {
         "form": form

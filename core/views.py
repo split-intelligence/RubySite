@@ -4,7 +4,7 @@ from django.contrib import messages
 from lms.models import Course, Category
 from users.models import InstructorProfile as Instructor
 
-from .models import ContactLeads, Testimonials
+from .models import ContactLeads, Testimonials, Partner
 
 
 # Create your views here.
@@ -14,7 +14,11 @@ def index(request):
     courses = Course.objects.all()
     testimonials = Testimonials.objects.all()[:4]
     instructors = Instructor.objects.all()[:6]
-    
+    partners = Partner.objects.all()[:6]
+    has_partners = partners.exists()  # Check if there are any partners
+    has_testimonials = testimonials.exists()  # Check if there are any testimonials
+    has_instructors = instructors.exists()  # Check if there are any instructors
+    has_blog_post = False
     
     context = {
         'categories': categories,
@@ -24,6 +28,11 @@ def index(request):
         'trending_courses':courses.filter(is_trending=True)[:6],  # Limit to 6 trending courses
         'popularity_courses':courses.filter(is_popular=True)[:6],  # Limit to 6 popular courses
         'featured_courses':courses.filter(is_featured=True)[:6],  # Limit to 6 featured courses
+        'partners': partners,
+        'has_partners': has_partners,  # Pass the boolean
+        'has_testimonials': has_testimonials,  # Pass the boolean
+        'has_instructors': has_instructors,  # Pass the boolean
+        'has_blog_post': has_blog_post,  # Pass the boolean
     }
     
     return render(request, 'index.html', context)

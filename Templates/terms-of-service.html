@@ -1,0 +1,227 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Terms of Service{% endblock %}
+
+{% block content %}
+
+<section class="pt-120 pb-80" style="background:#f6f8fb;min-height:100vh;">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-10">
+
+                <!-- Header -->
+                <div class="card border-0 shadow-sm mb-4"
+                     style="border-radius:18px;overflow:hidden;">
+
+                    <div style="
+                        background:linear-gradient(135deg,#710001,#9c1a1b);
+                        color:white;
+                        padding:45px;">
+
+                        <h2 class="text-white mb-2">
+                            <i class="fas fa-file-contract"></i>
+                            Terms of Service
+                        </h2>
+
+                        <p class="mb-0" style="color:#f3f3f3;">
+                            Please read these Terms of Service carefully before
+                            using the RubyTech Learning Platform.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- Content -->
+                <div class="card border-0 shadow-sm"
+                     style="border-radius:18px;">
+
+                    <div class="card-body p-5">
+
+                        <p class="text-muted">
+                            <strong>Last Updated:</strong> {{ today|default:"July 2026" }}
+                        </p>
+
+                        <hr>
+
+                        <h4 class="mt-4">
+                            <i class="fas fa-user-check text-danger"></i>
+                            1. Acceptance of Terms
+                        </h4>
+
+                        <p>
+                            By registering for an account, enrolling in any course,
+                            or using the RubyTech Learning Platform, you agree to
+                            comply with these Terms of Service. If you do not agree
+                            with these terms, you should discontinue use of the
+                            platform immediately.
+                        </p>
+
+                        <hr>
+
+                        <h4>
+                            <i class="fas fa-user-graduate text-danger"></i>
+                            2. Student Responsibilities
+                        </h4>
+
+                        <ul>
+
+                            <li>Provide accurate registration information.</li>
+
+                            <li>Maintain the confidentiality of your login credentials.</li>
+
+                            <li>Do not share course materials with unauthorized persons.</li>
+
+                            <li>Use the platform only for lawful educational purposes.</li>
+
+                            <li>Respect instructors, staff and other students.</li>
+
+                        </ul>
+
+                        <hr>
+
+                        <h4>
+                            <i class="fas fa-book text-danger"></i>
+                            3. Course Materials
+                        </h4>
+
+                        <p>
+                            All videos, documents, notes, source code, assignments
+                            and other educational materials remain the intellectual
+                            property of RubyTech Learning.
+                        </p>
+
+                        <p>
+                            Students may download materials for personal learning
+                            only. Redistribution, resale or republication is strictly
+                            prohibited without written permission.
+                        </p>
+
+                        <hr>
+
+                        <h4>
+                            <i class="fas fa-credit-card text-danger"></i>
+                            4. Payments & Refunds
+                        </h4>
+
+                        <ul>
+
+                            <li>Course fees must be paid before access is granted unless otherwise stated.</li>
+
+                            <li>Payments made through approved gateways are subject to verification.</li>
+
+                            <li>Refund requests are considered only in accordance with RubyTech's refund policy.</li>
+
+                            <li>Failed or cancelled transactions do not guarantee course access.</li>
+
+                        </ul>
+
+                        <hr>
+
+                        <h4>
+                            <i class="fas fa-lock text-danger"></i>
+                            5. Privacy
+                        </h4>
+
+                        <p>
+                            Your personal information is handled securely and is
+                            used solely for providing educational services,
+                            processing payments and improving your learning
+                            experience.
+                        </p>
+
+                        <hr>
+
+                        <h4>
+                            <i class="fas fa-ban text-danger"></i>
+                            6. Prohibited Activities
+                        </h4>
+
+                        <ul>
+
+                            <li>Sharing account credentials.</li>
+
+                            <li>Uploading malicious software.</li>
+
+                            <li>Attempting unauthorized access.</li>
+
+                            <li>Plagiarism or academic dishonesty.</li>
+
+                            <li>Harassment or abuse of other users.</li>
+
+                        </ul>
+
+                        <hr>
+
+                        <h4>
+                            <i class="fas fa-user-slash text-danger"></i>
+                            7. Account Suspension
+                        </h4>
+
+                        <p>
+                            RubyTech reserves the right to suspend or terminate
+                            accounts found to be in violation of these Terms of
+                            Service without prior notice.
+                        </p>
+
+                        <hr>
+
+                        <h4>
+                            <i class="fas fa-sync-alt text-danger"></i>
+                            8. Changes to These Terms
+                        </h4>
+
+                        <p>
+                            These Terms of Service may be updated periodically.
+                            Continued use of the platform after any changes
+                            constitutes acceptance of the revised terms.
+                        </p>
+
+                        <hr>
+
+                        <h4>
+                            <i class="fas fa-envelope text-danger"></i>
+                            9. Contact Us
+                        </h4>
+
+                        <p>
+                            If you have questions regarding these Terms of Service,
+                            please contact the RubyTech support team using the
+                            contact information available on the platform.
+                        </p>
+
+                        <div class="mt-5 text-center">
+
+                            <a href="{% url 'student-dashboard' %}"
+                               class="btn"
+                               style="
+                                    background:#710001;
+                                    color:white;
+                                    padding:12px 35px;
+                                    border-radius:8px;">
+
+                                <i class="fas fa-arrow-left"></i>
+
+                                Back to Dashboard
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

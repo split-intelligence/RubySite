@@ -67,6 +67,14 @@ def contact(request):
     return render(request, 'contact-us.html')
 
 
+def terms_service(request):
+    return render(request, 'terms-of-service.html')
+
+
+def privacy_policy(request):
+    return render(request, 'privacy-policy.html')
+
+
 
 
 # remove to their apps

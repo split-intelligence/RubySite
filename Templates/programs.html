@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}Academic Programs{% endblock %}
-{% block context %}
+{% block content %}
    <main>
 
    <!-- breadcrumb-area-start -->
@@ -17,7 +17,7 @@
                   </div>
                   <div class="it-breadcrumb-list-wrap">
                      <div class="it-breadcrumb-list">
-                        <a href="index.html">Home</a>
+                        <span><a href="{% url 'index' %}">Home</a></span>
                         <span class="dvdr"><i class="fa-regular fa-chevron-right"></i></span>
                         <span>Academic Programs</span>
                      </div>
@@ -307,4 +307,4 @@
    <!-- cta-area-end -->
 
    </main>
-{% endblock context %}
+{% endblock content %}

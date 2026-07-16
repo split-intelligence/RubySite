@@ -77,3 +77,9 @@ class PaymentRecord(MetaData):
 
     def __str__(self):
         return f"{self.student.user.username} - {self.course.title} - {self.amount}"
+
+
+class AttendanceRecord(MetaData):
+    student = models.ForeignKey('users.StudentProfile', on_delete=models.CASCADE, related_name='attendance')
+    course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='attendance')
+    

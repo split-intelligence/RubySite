@@ -141,7 +141,7 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
-
+STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 USE_S3 = env.bool("USE_S3", default=False)
 

@@ -6,10 +6,11 @@ from django.conf import settings
 from django.contrib import messages
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
-
+from django.forms import modelformset_factory
+from django.db import transaction
 
 from users.models import StudentProfile
-from .models import Course, Category, EnrolledStudent, PaymentRecord
+from .models import Course, Category, EnrolledStudent, PaymentRecord, ClassSession, AttendanceRecord
 
 # Create your views here.
 
@@ -177,9 +178,74 @@ def payment_callback(request):
             return render(request, 'payment-error.html', {'error': 'Payment verification failed', 'course':course})
     except Exception as e:
         return render(request, 'payment-error.html', {'error': str(e), 'course':course})
+
+
+@login_required
+def instructor_mark_attendance(request, session_id):
+    # 1. Get the session and ensure the instructor owns the course
+    session = get_object_or_404(ClassSession, id=session_id)
+    course = session.course
+
+    # Permission check: Only the assigned instructor can mark attendance
+    try:
+        instructor_profile = request.user.instructor_profile
+    except AttributeError:
+        messages.error(request, "You are not an instructor.")
+        return redirect('home')
+
+    if course.instructor != instructor_profile:
+        messages.error(request, "You are not authorized to mark attendance for this course.")
+        return redirect('home')
+
+    # 2. Get all students enrolled in this course
+    enrolled_students = EnrolledStudent.objects.filter(course=course).select_related('student')
+
+    # 3. Ensure every enrolled student has an AttendanceRecord for this session
+    #    (This prevents missing rows in the form)
+    for enrollment in enrolled_students:
+        AttendanceRecord.objects.get_or_create(
+            student=enrollment.student,
+            session=session,
+            defaults={'status': 'absent'}  # Default to absent if not marked yet
+        )
+
+    # 4. Fetch all records for this session to edit
+    attendance_queryset = AttendanceRecord.objects.filter(session=session).select_related('student__user')
+
+    # 5. Setup the ModelFormSet
+    AttendanceFormSet = modelformset_factory(
+        AttendanceRecord,
+        fields=('status', 'check_in_time', 'remarks'),  # Only these fields are editable by instructor
+        extra=0,  # We don't want empty extra forms
+        labels={
+            'status': 'Status',
+            'check_in_time': 'Check-in Time',
+            'remarks': 'Remarks'
+        }
+    )
+
+    if request.method == 'POST':
+        formset = AttendanceFormSet(request.POST, queryset=attendance_queryset)
+        if formset.is_valid():
+            with transaction.atomic():
+                formset.save()
+            messages.success(request, f"Attendance for {session.title} updated successfully!")
+            return redirect('instructor_course_detail', course_id=course.id)  # Redirect back to course dashboard
+    else:
+        formset = AttendanceFormSet(queryset=attendance_queryset)
+
+    # Prepare context for template
+    context = {
+        'session': session,
+        'course': course,
+        'formset': formset,
+        'students': attendance_queryset,  # For display purposes
+    }
+    return render(request, 'instructor_mark_attendance.html', context)
     
     
 def instructor_dashboard(request):
     # Placeholder for instructor dashboard view
     return render(request, 'instructor-dashboard.html')
+
 

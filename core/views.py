@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 
 from lms.models import Course, Category
@@ -75,6 +75,16 @@ def privacy_policy(request):
     return render(request, 'privacy-policy.html')
 
 
+def get_courses_category(request, cate_id):
+    category = get_object_or_404(Category, id=cate_id)
+    courses = Course.objects.filter(category=category)
+    return render(request, "courses-v1.html", {"courses":courses})
+
+
+def get_courses_category_name(request, name):
+    category = get_object_or_404(Category, name=name)
+    courses = Course.objects.filter(category=category)
+    return render(request, "courses-v1.html", {"courses":courses})
 
 
 # remove to their apps

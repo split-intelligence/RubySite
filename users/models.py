@@ -30,7 +30,17 @@ class StudentProfile(models.Model):
         if not self.student_id:
             self.student_id = self.generate_unique_short_id()
         super().save(*args, **kwargs)
-
+    
+    
+    def attendance_percentage(self, course):
+        total_sessions = course.sessions.count()
+        if total_sessions == 0:
+            return 0.0
+        attended = self.attendance_records.filter(
+            session__course=course,
+            status__in=['present', 'late']  # count late as present if desired
+        ).count()
+        return (attended / total_sessions) * 100.0
     
     @classmethod
     def generate_unique_short_id(cls):
@@ -45,6 +55,7 @@ class StudentProfile(models.Model):
             # Check if it already exists in the database
             if not cls.objects.filter(student_id=code).exists():
                 return code
+
 
 
 class InstructorProfile(models.Model):

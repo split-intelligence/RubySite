@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Mark Attendance</h2>
+    <h4>Course: {{ course.title }}</h4>
+    <h5>Session: {{ session.title }} ({{ session.date }})</h5>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ formset.management_form }}  <!-- Required for ModelFormSet -->
+
+        <table class="table table-bordered table-striped mt-3">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Student Name</th>
+                    <th>Status</th>
+                    <th>Check-in Time</th>
+                    <th>Remarks</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for form in formset %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>
+                            {{ form.instance.student.user.get_full_name }} 
+                            ({{ form.instance.student.user.username }})
+                        </td>
+                        <td>
+                            {{ form.status }}  <!-- Dropdown: Present/Absent/Late/Excused -->
+                            {% if form.status.errors %}
+                                <div class="text-danger">{{ form.status.errors }}</div>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {{ form.check_in_time }}  <!-- TimeField input -->
+                            {% if form.check_in_time.errors %}
+                                <div class="text-danger">{{ form.check_in_time.errors }}</div>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {{ form.remarks }}
+                            {% if form.remarks.errors %}
+                                <div class="text-danger">{{ form.remarks.errors }}</div>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <!-- Hidden fields required by formset -->
+                    {{ form.id }}
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <button type="submit" class="btn btn-primary">Save All Attendance</button>
+        <a href="{% url 'instructor_course_detail' course.id %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock %}

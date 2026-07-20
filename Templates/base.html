@@ -38,9 +38,9 @@
       <div id="it-loading-center">
          <div id="it-loading-absolute">
             <div class="it-loading-content">
-               <img class="it-loading-logo" src="{% static 'assets/img/logo/logo-black.png' %}" alt="">
+               <img class="it-loading-logo" src="{% static 'assets/img/logo/logo-black.png' %}" height="150" alt="">
                <div class="it-loading-stroke">
-                  <img class="it-loading-icon" src="{% static 'assets/img/logo/pencil.png' %}" alt="">
+                  <img class="it-loading-icon" src="{% static 'assets/img/logo/pencil.png' %}" alt="" height="150">
                </div>
                <span>"Loading Knowledge... Please Wait Wisely!"</span>
             </div>
@@ -304,7 +304,9 @@
                <div class="row align-items-center">
                   <div class="col-xxl-2 col-xl-2 col-lg-4 col-md-5 col-6">
                      <div class="it-header-logo">
-                        <a href="{% url 'index' %}"><img src="{% static 'assets/img/logo/logo-red.png' %}" alt="ruby-logo"></a>
+                        <a href="{% url 'index' %}">
+                           <img src="{% static 'assets/img/logo/logo-red.png' %}" alt="ruby-logo" height="40">
+                        </a>
                      </div>
                   </div>
                   <div class="col-xxl-5 col-xl-5 d-none d-xl-block">
@@ -321,7 +323,7 @@
                                  <a href="{% url 'courses' %}">Courses</a>
                               </li>
                               <li class="p-static">
-                                 <a href="{% url 'blog' %}">Blog</a>
+                                 <!--<a href="{% url 'blog' %}">Blog</a>-->
                               </li>
                               <li class="p-static">
                                  <a href="{% url 'contact' %}">Contact Us</a>
@@ -424,7 +426,7 @@
                   data-wow-delay=".3s">
                   <div class="it-footer-widget it-footer-col-1-1">
                      <div class="it-footer-widget-logo mb-30">
-                        <a href="{% url 'index' %}"><img src="{% static 'assets/img/logo/logo-red.png' %}" alt=""></a>
+                        <a href="{% url 'index' %}"><img src="{% static 'assets/img/logo/logo-red.png' %}" alt="" height="50"></a>
                      </div>
                      <div class="it-footer-widget-text">
                         <p>Access expert-led courses designed to help you succeed in your career, all from the comfort of your home.</p>
@@ -444,21 +446,19 @@
                      </div>
                   </div>
                </div>
-               <!--<div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 mb-50 wow itfadeUp" data-wow-duration=".9s"
+               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 mb-50 wow itfadeUp" data-wow-duration=".9s"
                   data-wow-delay=".5s">
                   <div class="it-footer-widget it-footer-col-1-2">
                      <h4 class="it-footer-widget-title">Useful Links</h4>
                      <div class="it-footer-widget-menu">
                         <ul>
-                           <li><a href="#">Marketplace</a></li>
-                           <li><a href="#">kindergarten</a></li>
-                           <li><a href="#">University</a></li>
-                           <li><a href="#">GYM Coaching</a></li>
-                           <li><a href="#">Cooking</a></li>
+                           <li><a href="{% url 'get_courses_category' 'software engineering' %}">Software Engineering</a></li>
+                           <li><a href="{% url 'get_courses_category' 'artificial intelligence' %}">Artificial Intelligence</a></li>
+                           <li><a href="{% url 'get_courses_category' 'emerging technologies' %}">Emerging Technologies</a></li>
                         </ul>
                      </div>
                   </div>
-               </div>-->
+               </div>
                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 mb-50 wow itfadeUp" data-wow-duration=".9s"
                   data-wow-delay=".7s">
                   <div class="it-footer-widget it-footer-col-1-3">
@@ -466,8 +466,9 @@
                      <div class="it-footer-widget-menu">
                         <ul>
                            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                           <li><a href="{% url 'about' %}">About Us</a></li>
                            <!--<li><a href="#">Become Teacher</a></li>-->
-                           <li><a href="{% url 'blog' %}">Blog</a></li>
+                           <!--<li><a href="{% url 'blog' %}">Blog</a></li>-->
                            <!--<li><a href="#">Instructor</a></li>
                            <li><a href="#">Events</a></li>-->
                         </ul>
@@ -535,8 +536,9 @@
                      <span>-</span>              
                      <a class="border-line" href="{% url 'privacy' %}">Privacy policy</a>                 
                      <span>-</span>   
-                     <!--<a class="border-line" href="#">Subscription</a>    
-                     <span>-</span>-->                
+                     <a href="https://webmail.rubytechlearning.com/">Mail</a>
+                     <!--<a class="border-line" href="#">Subscription</a>-->  
+                     <span>-</span>               
                      <a class="border-line" href="{% url 'login' %}">Login & Register</a>                      
                   </div>
                </div>
